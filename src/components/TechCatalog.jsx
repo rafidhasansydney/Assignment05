@@ -1,0 +1,42 @@
+import { useEffect, useState } from 'react'
+import TechnologyCard from './TechnologyCard'
+
+function TechCatalog() {
+  const [technologies, setTechnologies] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('technologies.json')
+      .then((res) => res.json())
+      .then((data) => setTechnologies(data))
+      .finally(() => setLoading(false))
+  }, [])
+
+  return (
+    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-16 lg:px-8">
+      <div className="text-center">
+        <h2 className="font-heading text-2xl font-extrabold text-slate-900 md:text-4xl">
+          Explore the <span className="text-brand-gradient">Technologies</span>
+        </h2>
+        <p className="mt-3 text-sm text-slate-500 md:text-base">
+          Pick one technology per category to build your ideal stack.
+        </p>
+      </div>
+
+      {loading ? (
+        <div className="flex flex-col items-center gap-3 py-20">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-slate-800"></div>
+          <p className="text-sm text-slate-500">Loading technologies...</p>
+        </div>
+      ) : (
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {technologies.map((tech) => (
+            <TechnologyCard key={tech.id} tech={tech} />
+          ))}
+        </div>
+      )}
+    </section>
+  )
+}
+
+export default TechCatalog
