@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import TechnologyCard from './TechnologyCard'
+import YourStack from './YourStack'
 
-function TechCatalog() {
+function TechCatalog({ stack, onAdd, onRemove, onClear }) {
   const [technologies, setTechnologies] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -29,10 +30,18 @@ function TechCatalog() {
           <p className="text-sm text-slate-500">Loading technologies...</p>
         </div>
       ) : (
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {technologies.map((tech) => (
-            <TechnologyCard key={tech.id} tech={tech} />
-          ))}
+        <div className="mt-10 flex flex-col gap-8 lg:flex-row">
+          <div className="grid flex-1 grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            {technologies.map((tech) => (
+              <TechnologyCard
+                key={tech.id}
+                tech={tech}
+                isAdded={stack.some((item) => item.id === tech.id)}
+                onAdd={() => onAdd(tech)}
+              />
+            ))}
+          </div>
+          <YourStack stack={stack} onRemove={onRemove} onClear={onClear} />
         </div>
       )}
     </section>
