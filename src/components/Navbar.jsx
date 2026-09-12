@@ -32,12 +32,12 @@ function Navbar() {
 
         <a
           href="#"
-          className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2 md:static md:translate-x-0 md:gap-2.5"
+          className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1.5 md:static md:translate-x-0 md:gap-2.5"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-brand-gradient text-[10px] font-extrabold text-white md:h-9 md:w-9 md:rounded-lg md:text-sm">
+          <span className="flex h-6 w-6 items-center justify-center rounded-md bg-brand-gradient text-[9px] font-extrabold text-white md:h-9 md:w-9 md:rounded-lg md:text-sm">
             DS
           </span>
-          <span className="font-heading text-sm font-bold text-slate-900 md:text-xl">
+          <span className="font-heading text-[11px] font-bold text-slate-900 md:text-xl">
             Dev <span className="font-extrabold text-brand-gradient">Stack</span>
           </span>
         </a>
@@ -59,16 +59,16 @@ function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
           <a
             href="#"
-            className="text-xs font-semibold text-slate-600 hover:text-slate-900 md:text-sm md:font-medium md:text-slate-700"
+            className="text-[10px] font-semibold text-slate-600 hover:text-slate-900 md:text-sm md:font-medium md:text-slate-700"
           >
             Sign In
           </a>
           <a
             href="#"
-            className="rounded-full bg-brand-gradient px-4 py-1.5 text-xs font-semibold text-white hover:opacity-90 md:px-5 md:py-2.5 md:text-sm"
+            className="rounded-full bg-brand-gradient px-3.5 py-1.5 text-[10px] font-semibold text-white hover:opacity-90 md:px-5 md:py-2.5 md:text-sm"
           >
             Sign Up
           </a>
