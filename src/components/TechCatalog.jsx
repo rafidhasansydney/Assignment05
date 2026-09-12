@@ -14,7 +14,7 @@ function TechCatalog({ stack, onAdd, onRemove, onClear }) {
   }, [])
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-16 lg:px-8">
+    <section id="technologies" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-14 sm:px-6 md:py-16 lg:px-8">
       <div className="text-center">
         <h2 className="font-heading text-2xl font-extrabold text-slate-900 md:text-4xl">
           Explore the <span className="text-brand-gradient">Technologies</span>

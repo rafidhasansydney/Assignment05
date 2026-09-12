@@ -7,6 +7,10 @@
   --gradient-mark: linear-gradient(135deg, #ec4899, #7c3aed);
 }
 
+@utility bg-brand-gradient {
+  background-image: var(--gradient-brand);
+}
+
 @utility text-brand-gradient {
   background-image: var(--gradient-brand);
   -webkit-background-clip: text;

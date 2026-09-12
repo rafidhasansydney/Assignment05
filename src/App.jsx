@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import Navbar from './components/Navbar'
+import Hero from './components/Hero'
 import TechCatalog from './components/TechCatalog'
+import Footer from './components/Footer'
 
 function App() {
   const [stack, setStack] = useState([])
@@ -30,6 +32,7 @@ function App() {
     <div>
       <Navbar />
       <main className="min-h-screen bg-white">
+        <Hero />
         <TechCatalog
           stack={stack}
           onAdd={addToStack}
@@ -37,6 +40,7 @@ function App() {
           onClear={clearStack}
         />
       </main>
+      <Footer />
       <ToastContainer position="bottom-right" autoClose={2000} />
     </div>
   )
