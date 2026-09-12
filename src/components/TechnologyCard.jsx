@@ -48,7 +48,6 @@ function TechnologyCard({ tech, isAdded, onAdd }) {
 
       <button
         onClick={onAdd}
-        disabled={isAdded}
         className={
           isAdded
             ? 'mt-5 w-full cursor-not-allowed rounded-lg bg-pink-50 py-2.5 text-sm font-semibold text-[#d91b7e]'

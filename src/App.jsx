@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
 import Navbar from './components/Navbar'
 import TechCatalog from './components/TechCatalog'
 
@@ -7,17 +8,23 @@ function App() {
 
   const addToStack = (tech) => {
     if (stack.some((item) => item.id === tech.id)) {
-      alert(`${tech.name} is already in your stack`)
+      toast.warning(`${tech.name} is already in your stack`)
       return
     }
     setStack([...stack, tech])
+    toast.success(`${tech.name} added to your stack`)
   }
 
   const removeFromStack = (id) => {
+    const removed = stack.find((item) => item.id === id)
     setStack(stack.filter((item) => item.id !== id))
+    toast.info(`${removed.name} removed from your stack`)
   }
 
-  const clearStack = () => setStack([])
+  const clearStack = () => {
+    setStack([])
+    toast.error('All technologies removed from your stack')
+  }
 
   return (
     <div>
@@ -30,6 +37,7 @@ function App() {
           onClear={clearStack}
         />
       </main>
+      <ToastContainer position="bottom-right" autoClose={2000} />
     </div>
   )
 }
