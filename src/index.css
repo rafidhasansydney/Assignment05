@@ -4,10 +4,7 @@
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
   --gradient-brand: linear-gradient(90deg, #f97316, #ec4899, #7c3aed);
-}
-
-@utility bg-brand-gradient {
-  background-image: var(--gradient-brand);
+  --gradient-mark: linear-gradient(135deg, #ec4899, #7c3aed);
 }
 
 @utility text-brand-gradient {
@@ -15,4 +12,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+@utility bg-mark-gradient {
+  background-image: var(--gradient-mark);
 }
