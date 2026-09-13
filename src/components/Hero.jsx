@@ -33,7 +33,7 @@ function Hero() {
           <img
             src={banner}
             alt="Illustration of a layered technology stack"
-            className="w-64 sm:w-72 lg:w-96"
+            className="w-72 sm:w-80 lg:w-96"
           />
         </div>
       </div>
